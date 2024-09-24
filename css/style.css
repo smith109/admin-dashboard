@@ -20,6 +20,15 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
 body>.container {
   display: grid;
   grid-template-columns: 1fr 4fr;
@@ -29,6 +38,19 @@ body>.container {
   background: var(--clr-primary);
   color: var(--clr-neutral-lt);
   grid-row: span 2;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 32px;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.sidebar .logo>a {
+  font-size: 1.7rem;
+}
+
+.nav li>a {
+  font-size: 1.2rem;
 }
 
 .container>.main-content {
