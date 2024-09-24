@@ -1,0 +1,20 @@
+:root {
+  --clr-primary: #7f1d1d;
+  --clr-secondary: #fcf6f5;
+  --clr-neutral-lt: #ffffff;
+}
+
+body>.container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.container>.sidebar {
+  background: var(--clr-primary);
+  color: var(--clr-neutral-lt);
+  grid-row: span 2;
+}
+
+.container>.main-content {
+  background: var(--clr-secondary);
+}
