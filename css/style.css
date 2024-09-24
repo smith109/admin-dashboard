@@ -2,6 +2,22 @@
   --clr-primary: #7f1d1d;
   --clr-secondary: #fcf6f5;
   --clr-neutral-lt: #ffffff;
+  --clr-neutral-dk: #424242;
+  --ff-base: Inter, Roboto, 'Helvetica Neue',
+    'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--clr-neutral-dk);
+  font-family: var(--ff-base);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 body>.container {
