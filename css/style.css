@@ -3,6 +3,8 @@
   --clr-secondary: #fcf6f5;
   --clr-neutral-lt: #ffffff;
   --clr-neutral-dk: #424242;
+  --header-shadow: 10px -4px 16px 0px var(--clr-neutral-dk);
+  --input-border: 1px solid #dcdcdc;
   --ff-base: Inter, Roboto, 'Helvetica Neue',
     'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 }
@@ -29,9 +31,27 @@ ul {
   list-style: none;
 }
 
+label {
+  display: block;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
 body>.container {
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template: 1fr 4fr / 1fr 4fr;
+}
+
+.container>* {
+  padding: 1rem;
 }
 
 .container>.sidebar {
@@ -42,7 +62,6 @@ body>.container {
   grid-template-rows: auto auto 1fr;
   gap: 32px;
   font-weight: 600;
-  padding: 1rem;
 }
 
 .sidebar .logo>a {
@@ -51,6 +70,73 @@ body>.container {
 
 .nav li>a {
   font-size: 1.2rem;
+}
+
+.container>.header {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 45px 1fr;
+  row-gap: 16px;
+  position: relative;
+  box-shadow: var(--header-shadow);
+}
+
+.header>div:not(:last-child) {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header p {
+  font-weight: 600;
+}
+
+.search-bar label>img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.search-bar input[type='search'] {
+  border: var(--input-border);
+  border-radius: 30rem;
+  padding: .2rem;
+  width: 70%;
+}
+
+.header>.menu {
+  justify-self: center;
+}
+
+.menu>p {
+  font-size: 1.1rem;
+}
+
+.user-info p:last-of-type {
+  font-size: 1.5rem;
+}
+
+.header .btn-container {
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  gap: 16px;
+}
+
+.btn-container button {
+  background: var(--clr-primary);
+  color: var(--clr-secondary);
+  border: 2px solid transparent;
+  padding: 8px 16px;
+  border-radius: 30rem;
+  width: 6rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.btn-container button:hover {
+  background: var(--clr-secondary);
+  border: 2px solid var(--clr-primary);
+  color: var(--clr-primary);
 }
 
 .container>.main-content {
