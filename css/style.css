@@ -11,10 +11,15 @@
     'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -50,6 +55,8 @@ button {
 body>.container {
   display: grid;
   grid-template-columns: 1fr 4fr;
+  grid-template-rows: auto 1fr;
+  min-height: 100dvh;
 }
 
 .container>* {
@@ -66,12 +73,38 @@ body>.container {
   font-weight: 600;
 }
 
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .sidebar .logo>a {
   font-size: 1.7rem;
 }
 
+.sidebar .logo>a::before {
+  content: url(../img/dashboard.svg);
+  width: 3rem;
+  height: 3rem;
+}
+
+.nav li {
+  margin-bottom: .8rem;
+  margin-left: .5rem;
+}
+
 .nav li>a {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+}
+
+.nav li>a::before {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.nav li>a:hover {
+  color: var(--clr-accent);
 }
 
 .container>.header {
@@ -144,8 +177,9 @@ body>.container {
 .container>.main-content {
   background: var(--clr-secondary);
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 24px;
+  grid-template-columns: 3fr 1fr;
+  column-gap: 24px;
+  row-gap: 8px;
 }
 
 .main-content>.projects {
@@ -188,19 +222,18 @@ body>.container {
   margin-top: auto;
 }
 
-.announcements .card,
-.trending .card {
-  width: 85%;
+.card img:last-child {
+  transform: rotate(268deg);
 }
 
 .announcements .title+p {
   margin-bottom: .5rem;
-  padding-bottom: .5rem;
   font-size: .8rem;
 }
 
 .announcements .title+p:not(:last-child) {
   border-bottom: 2px solid #dcdcdc;
+  padding-bottom: .5rem;
 }
 
 .trending .card {
@@ -217,4 +250,40 @@ body>.container {
 
 .user p:first-child {
   margin-top: .5rem;
+}
+
+a[href="#home"]::before {
+  content: url(../img/home.svg);
+}
+
+a[href="#profile"]::before {
+  content: url(../img/profile.svg);
+}
+
+a[href="#messages"]::before {
+  content: url(../img/message.svg);
+}
+
+a[href="#history"]::before {
+  content: url(../img/history.svg);
+}
+
+a[href="#tasks"]::before {
+  content: url(../img/tasks.svg);
+}
+
+a[href="#communities"]::before {
+  content: url(../img/communities.svg);
+}
+
+a[href="#settings"]::before {
+  content: url(../img/settings.svg);
+}
+
+a[href="#support"]::before {
+  content: url(../img/help-box.svg);
+}
+
+a[href="#privacy"]::before {
+  content: url(../img/shield-check.svg);
 }
