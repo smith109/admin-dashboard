@@ -3,6 +3,7 @@
 :root {
   --primary-bg-color: #E2E8F0;
   --sidebar-bg-color: #1992D4;
+  --base-text-color: #222222;
   --accent-color: #F0B429;
   --color-white: #FFFFFF;
   --base-ff: "Roboto", sans-serif;
@@ -16,6 +17,7 @@
 body {
   line-height: 1.5;
   font-family: var(--base-ff);
+  color: var(--base-text-color);
   background-color: var(--primary-bg-color);
 }
 
@@ -43,6 +45,13 @@ div.container {
   grid-template-columns: 250px 4fr;
 }
 
+div.avatar {
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
 .container > .sidebar {
   grid-row: 1 / 3;
   color: var(--color-white);
@@ -50,7 +59,7 @@ div.container {
   display: grid;
   gap: 34px;
   padding: 16px;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: repeat(2, auto) 1fr;
 }
 
 .sidebar > .branding,
@@ -84,5 +93,87 @@ div.container {
 }
 
 .container > .header {
+  display: grid;
+  gap: 20px;
+  padding: 24px 40px;
+  grid-template-columns: 2fr 1fr;
   background-color: var(--color-white);
+  box-shadow: 0 4px 6px rgba(15, 23, 42, 0.12);
+}
+
+.header > div:nth-child(n){
+  display: grid;
+}
+
+.header p {
+  font-weight: 600;
+}
+
+.header > .search-bar {
+  gap: 16px;
+  grid-template-columns: 24px 1fr;
+}
+
+.search-bar input {
+  border: none;
+  width: 75%;
+  padding: 8px;
+  border-radius: 20px;
+  background-color: var(--primary-bg-color);
+}
+
+.header > .profile {
+  gap: 25px;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 24px 48px auto;
+}
+
+.header .avatar {
+  background-color: #facc15;
+}
+
+.profile > .avatar {
+  width: 48px;
+  height: 48px;
+}
+
+.profile > p {
+  font-size: 1.15rem;
+}
+
+.header > .greeting {
+  gap: 16px;
+  align-items: center;
+  grid-template-columns: 60px 1fr;
+}
+
+.greeting > .avatar {
+  width: 60px;
+  height: 60px;
+}
+
+.greeting p:first-of-type {
+  font-size: 0.9rem;
+}
+
+.greeting p:last-of-type {
+  font-size: 1.3rem;
+}
+
+.header > .btn-container {
+  gap: 16px;
+  align-self: center;
+  justify-self: center;
+  grid-template-columns: repeat(3, auto);
+}
+
+.btn-container > button {
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 20px;
+  color: var(--color-white);
+  background-color: var(--sidebar-bg-color);
 }
